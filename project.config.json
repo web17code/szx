@@ -1,0 +1,81 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.7.2",
+	"appid": "wx2fed6403c1c26b99",
+	"projectname": "ShuaT",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 3,
+			"list": [
+				{
+					"id": -1,
+					"name": "邀请页",
+					"pathName": "pages/invite/invite",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "wait",
+					"pathName": "pages/wait/wait",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "wait-passive",
+					"pathName": "pages/wait-passive/wait-passive",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "PK",
+					"pathName": "pages/PK/PK",
+					"query": "type=&oidA=xxxA&oidB=xxxB"
+				},
+				{
+					"id": 4,
+					"name": "detailResult",
+					"pathName": "pages/detailResult/detailResult",
+					"query": "oidA=ows8A0ZgsxcxRT9Dglm2H79pMLWU&oidB=ows8A0cgIOimRfAR84mkTbyEhrgM&showid=9aba4161-af9f-4c75-ab55-718f21284890"
+				},
+				{
+					"id": -1,
+					"name": "rank",
+					"pathName": "pages/ranks/ranks",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "myscore",
+					"pathName": "pages/myscore/myscore",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "demo",
+					"pathName": "pages/demo/demo",
+					"query": ""
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,65 @@
+/* pages/myscore/myscore.wxss */
+.myscorebg{
+  background: #5A83FF url(http://mapp.zhunedu.com/images/indexbg.png) no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+  display: block;
+  box-sizing: border-box;
+}
+.avatarC{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.avatarC .hat{
+  width: 124rpx;
+  height:60rpx;
+  position: absolute;
+  top:10rpx;
+  left:50%;
+  margin-left:-58rpx;
+}
+.avatarC .avatar{
+  margin-top:42rpx;
+  width:100rpx;
+  height: 100rpx;
+  border:10rpx solid #fff;
+  background: #ddd;
+  border-radius: 50%;
+}
+.nickNameTxt{
+  color:#fff;
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-top:22rpx;
+}
+.context{
+  border-radius: 10rpx;
+  width: 700rpx;
+  background: #fff;
+  padding: 62rpx 0;
+  margin:80rpx auto 0;
+}
+.context .info{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.context .info view{
+  color:#333;
+  font-size: 28rpx;
+  font-weight:blod;
+  width:300rpx;
+  margin-left:50rpx;
+  height:60rpx; 
+}
+.shareBtn{
+  font-size: 30rpx;
+  width:530rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  color:#5984FF;
+  line-height: 100rpx;
+  margin:120rpx auto;
+}

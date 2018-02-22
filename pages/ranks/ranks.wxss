@@ -1,0 +1,161 @@
+/* pages/ranks/ranks.wxss */
+.rankbg{
+  background: #5A83FF url(http://mapp.zhunedu.com/images/indexbg.png) no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+  display: block;
+  box-sizing: border-box;
+}
+.leftC{
+  padding-top:66rpx;
+}
+.headerC{
+  color:#fff;
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 66rpx;
+}
+.header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.header-txt{
+  display: block;
+  text-align: center;
+  margin-bottom: 14rpx;
+}
+.activebar{
+  background: #fff;
+  height: 6rpx;
+  border-radius: 3rpx;
+  width: 250rpx;
+}
+.list1-C{
+  background: #fff;
+  border-radius: 10rpx;
+  width:700rpx;
+  min-height: 860rpx;
+  margin:0 auto;
+}
+.list1-C .list1{
+  height: 170rpx;
+  display: flex;
+  flex-direction: row;
+}
+.nickName{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top:54rpx;
+  margin-bottom: 4rpx;
+  font-size: 30rpx;
+  color:#333;
+}
+.downTxt{
+  width:540rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.downTxt .t1{
+  color:#A2A6B0;
+  font-size: 26rpx;
+}
+.downTxt .t2{
+  color:#333;
+  font-size: 30rpx;
+  
+}
+.avatarC{
+  margin-top:38rpx;
+  position: relative;
+  width:136rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.avatarC .hat{
+  position: absolute;
+  z-index:111;
+  width:120rpx;
+  height:60rpx;
+}
+.list1 .avatarC .hat{
+  top:-24rpx;
+}
+.list1:nth-of-type(5) .avatarC .hat{
+  top:0rpx;
+}
+.avatarC .avatar{
+  background: #ddd;
+  border-radius: 50%;
+  width:100rpx;
+  height:100rpx;
+}
+.list1-C-Txt{
+  
+}
+.rank1{
+  margin-left:20rpx;
+  width: 80rpx;
+  display: block;
+  text-align: center;
+  line-height: 30rpx;
+  font-size: 24rpx;
+  border-radius: 10rpx;
+  height: 30rpx;
+  color:#fff;
+  background: #fc2333;
+}
+.rank2{
+  margin-left:20rpx;
+  width: 80rpx;
+  display: block;
+  text-align: center;
+  line-height: 30rpx;
+  font-size: 24rpx;
+  border-radius: 10rpx;
+  height: 30rpx;
+  color:#fff;
+  background: #fc9323;
+}
+.rank3{
+  margin-left:20rpx; 
+  width: 80rpx;
+  display: block;
+  text-align: center;
+  line-height: 30rpx;
+  font-size: 24rpx;
+  border-radius: 10rpx;
+  height: 30rpx;
+  color:#fff;
+  background: #ff68dd;
+}
+.rank4{
+  margin-left:20rpx;  
+  width: 80rpx;
+  display: block;
+  text-align: center;
+  line-height: 30rpx;
+  font-size: 24rpx;
+  border-radius: 10rpx;
+  height: 30rpx;
+  color:#fff;
+  background: #688fff;
+}
+.rank5{
+  margin-left:20rpx;  
+  width: 80rpx;
+  display: block;
+  text-align: center;
+  line-height: 30rpx;
+  font-size: 24rpx;
+  border-radius: 10rpx;
+  height: 30rpx;
+  color:#fff;
+  background: #37de89;
+}

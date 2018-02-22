@@ -1,0 +1,105 @@
+/* pages/wait/wait.wxss */
+.bg{
+  background: #5A83FF url(https://mapp.zhunedu.com/images/bg-otherPage.png) no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+  display: block;
+  box-sizing: border-box;
+  padding-top: 80rpx;
+}
+.wait-C{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color:#fff;
+  font-size: 30rpx;
+  font-weight: bold;
+  text-align:center;
+}
+.wait-C .wait-1{
+  width: 260rpx;
+}
+.wait-C .wait-1 .wait-avatar{
+  background: #ddd;
+  border-radius: 50%;
+  width: 110rpx;
+  height: 110rpx;
+  display: block;
+  border:10rpx solid #fff;
+  margin:0 auto 16rpx;
+}
+.wait-C .vs-pic{
+  width: 126rpx;
+  height: 82rpx;
+}
+.Txt-C{
+  height:278rpx;
+  width:600rpx;
+  display: block;
+  box-sizing: content-box;
+  border-radius: 10rpx;
+  background: #88a7ff;
+  margin: 86rpx auto 90rpx;
+  padding-top: 70rpx;
+}
+.Txt-v1{
+  color: #fff;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 44rpx;
+}
+.Txt-v2{
+  color:#fff;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-bottom: 26rpx;
+}
+.Txt-v3{
+  color:#D6E1FF;
+  text-align: center;
+  font-size: 24rpx;
+}
+.c-C{
+  margin:120rpx auto;
+  display: block;
+}
+.c-animation-C{
+  position: relative;
+  width: 118rpx;
+  height: 118rpx;
+  display: block;
+  box-sizing: border-box;
+  margin:0 auto;
+}
+.c-C .c-source{
+  line-height:1.4;
+  padding:0;
+  font-weight: bold;
+  text-align: center;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  color:#5984FF;
+  display: block;
+  box-sizing: border-box;
+  padding-top: 20rpx;
+  background: #fff;
+  position: absolute;
+  z-index: 111;
+  border:none;
+}
+.c-C .c-1x{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  top:-9.5rpx;
+  left:-9.5rpx;
+  background: #ACC2FF;
+  position: absolute;
+  z-index: 11;
+  display: block;
+  box-sizing: border-box;
+}

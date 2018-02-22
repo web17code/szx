@@ -1,0 +1,7 @@
+<!--pages/demo/demo.wxml-->
+<view bindtap='wxbuildWS' class='btn'>微信点击建立ws连接---wx</view>
+<view bindtap='htmlbuildWS' class='btn'>HTML5API建立ws链接--html</view>
+<view bindtap='clearLog'  class='btn'>cls</view>
+<view wx:for="{{logArr}}" style="font-size:26rpx;">
+  <view style="border-bottom:1px solid #aaa;padding:10rpx;">{{index+1}}、{{item}}</view>
+</view>

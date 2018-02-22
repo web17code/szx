@@ -1,0 +1,41 @@
+<!--pages/wait/wait.wxml-->
+<view class='bg-wait'>
+  <view class='wait-C'>
+    <view class='wait-1'>
+      <image class='wait-avatar' src="{{userInfo==null?cfg.cfg.defaultAvatar:(userInfo.avatarUrl==null?(cfg.cfg.defaultAvatar):userInfo.avatarUrl)}}"></image>
+      <view>{{userInfo==null?cfg.cfg.defaultName:(userInfo.nickName==null?(cfg.cfg.defaultName):userInfo.nickName)}}</view>
+    </view>
+    <image class='vs-pic' src="../../images/VS_03.png"></image>
+    <view class='wait-1'>
+      <image class='wait-avatar' src="{{userData?(userData.photoB?userData.photoB:cfg.cfg.defaultAvatar):''}}"></image>
+      <view>{{userData?(userData.uidB?userData.uidB:cfg.cfg.defaultName):'等待对手加入...'}}</view>
+    </view>
+  </view>
+  <!-- 文字框  -->
+  <view class='Txt-C'>
+    <view class='Txt-v1'>数学挑战赛</view>
+    <view class='Txt-v2'>难度挑战：{{type}}</view>
+    <view class='Txt-v3'>*每次答题最高可获200分</view>
+  </view>
+  <!-- 按钮*2  -->
+  <view class='c-C'>
+    <view class='c-animation-C'>
+      <button open-type="share"  class='c-source'>
+      <!-- <view> -->
+        <view style='font-size:30rpx;'>邀请</view>
+        <view style='font-size:30rpx;'>好友</view>
+      <!-- </view> -->
+      </button>
+      <view class='c-1x'></view>
+    </view>
+    <view class='c-animation-C'>
+      <view class='c-source' bindtap='goIndex_closeWS'>
+        <view style='font-size:30rpx;'>放弃</view>
+        <view style='font-size:30rpx;'>比赛</view>
+      </view>
+      <view class='c-1x'></view>
+    </view>
+  </view>
+  <!-- 开始按钮  -->
+  <view class='start-btn' bindtap='sendStart'>开始对战</view>
+</view>

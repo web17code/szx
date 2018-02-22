@@ -1,0 +1,42 @@
+<!--pages/detailResult/detailResult.wxml-->
+<view class='bg-detailResult'>
+  <view class='detailResult-C'>
+    <view class='detailResult-1'>
+      <image class='detailResult-avatar' src="{{showData.oidp?showData.oidp:cfg.cfg.defaultAvatar}}"></image>
+      <view>{{showData.oidn?showData.oidn:cfg.cfg.defaultName}}</view>
+    </view>
+    <image class='vs-pic' src="../../images/VS_03.png"></image>
+    <view class='detailResult-1'>
+      <image class='detailResult-avatar' src="{{showData.uidp?showData.uidp:cfg.cfg.defaultAvatar}}"></image>
+      <view>{{showData.uidn?showData.uidn:cfg.cfg.defaultName}}</view>
+    </view>
+  </view>
+  <!-- 文字框  -->
+  <view class='Txt-C'>
+    <view class='Txt-v1'>
+      <view class='progress-left-bg'>
+        <view class='progress-left' style='width:{{(showData.oids/showData.totalscore)*100+"%"}};'>
+          <view class='txt-progress-up'>{{showData.oids}}</view>  
+        </view>
+      </view>
+      <view class='centerTag'>总分</view>
+      <view class='progress-right-bg'>
+        <view class='progress-right' style='width:{{(showData.uids/showData.totalscore)*100+"%"}};'>
+          <view class='txt-progress-up'>{{showData.uids}}</view>  
+        </view>
+      </view>
+    </view>
+    <view class='Txt-v2'>
+      <view class='progress-left-bg'><view class='progress-left' style='width:{{showData.oida}};'>
+        <view class='txt-progress-up'>{{showData.oida}}</view>
+      </view></view>
+      <view class='centerTag'>正确率</view>
+      <view class='progress-right-bg'><view class='progress-right' style='width:{{showData.uida}};'>
+        <view class='txt-progress-up'>{{showData.uida}}</view>
+      </view></view>
+    </view>
+  </view>
+  <button class='btn' bindtap='goIndex' wx:if="{{options.look!='look'?true:false}}">继续挑战</button>
+  <button class='btn' open-type="share" wx:if="{{options.look!='look'?true:false}}">分享出去炫耀一下</button>
+  <button class='btn' bindtap='goIndex' wx:if="{{options.look=='look'?true:false}}">开启我的挑战</button>
+</view>

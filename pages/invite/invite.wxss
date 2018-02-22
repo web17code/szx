@@ -1,0 +1,133 @@
+/* pages/invite.wxss */
+@keyframes warn {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    20% {
+        transform: scale(1.05);
+        opacity: 0.75;
+    }
+    40% {
+        transform: scale(1.1);
+         opacity: 1
+    }
+    60% {
+        transform: scale(1.15);
+        opacity: 0.75;
+    }
+    80% {
+        transform: scale(1.2);
+        opacity: 0.5
+    }
+    100% {
+        transform: scale(1.25);
+        opacity: 0
+    }
+}
+.bg-invite{
+  background: #5A83FF url(https://mapp.zhunedu.com/images/bg-otherPage.png) no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+  display: block;
+  box-sizing: border-box;
+  padding-top: 250rpx;
+}
+.invite-content{
+  margin:0 auto ;
+  width: 600rpx;
+  height: 280rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+.invite-title{
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: bold;
+  width:450rpx;
+  border-radius: 10rpx;
+  background: #88A7FF;
+  color: #fff;
+  height:90rpx;
+  line-height: 90rpx;
+  display:block;
+  margin: 0 auto;
+  position: relative;
+  top:-48rpx;
+}
+.borderShade{
+  width: 570rpx;
+  height: 21rpx;
+  display: block;
+  margin: 0 auto;
+}
+.invite-p1{
+  margin-top: 20rpx;
+  color: #5984FF;
+  font-weight: bold;
+  text-align: center;
+  font-size: 40rpx;
+}
+.invite-p2{
+  margin-top: 14rpx;
+  color: #B7BAC2;
+  text-align: center;
+  font-size: 24rpx;
+}
+.c-C{
+  margin-top: 120rpx;
+  margin-left: 162rpx;
+  width: 426rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.c-animation-C{
+  position: relative;
+  width: 118rpx;
+  height: 118rpx;
+  display: block;
+  box-sizing: border-box;
+}
+.c-C .c-source{
+  line-height:1.4;
+  padding:0;
+  font-weight: bold;
+  text-align: center;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  color:#5984FF;
+  display: block;
+  box-sizing: border-box;
+  padding-top: 20rpx;
+  background: #fff;
+  position: absolute;
+  z-index: 111;
+  border:none;
+}
+.c-C .c-1x{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  top:-9.5rpx;
+  left:-9.5rpx;
+  background: #ACC2FF;
+  position: absolute;
+  z-index: 11;
+  display: block;
+  box-sizing: border-box;
+}
+.c-2x{
+  background: #83a3ff;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  top:-9.5rpx;
+  left:-9.5rpx;
+  position: absolute;
+  z-index: 1;
+  display: block;
+  box-sizing: border-box;
+  animation: warn 1s linear	0.5s infinite;
+}

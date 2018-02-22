@@ -1,0 +1,65 @@
+<view class='rankbg'>
+  <view class='leftC' hidden="{{showright}}">
+    <view class='headerC'>
+      <view class='header'>
+        <view class='header-txt'>答题正确率排行榜</view>
+        <view class='activebar'></view>
+      </view>
+      <view class='header' bindtap='goright'>
+        <view>答题勤奋排行榜</view>
+        <view></view>
+      </view>
+    </view> 
+    <view class='list1-C' >
+      <view class='list1' wx:for="{{hitRateArr}}" 
+          wx:for-index="index" wx:for-item="item">
+        <view class='avatarC'>
+          <image class='hat' src="../../images/hat{{index+1}}.png" 
+                 wx:if="{{index<=5}}"></image>
+          <image class='avatar' src='{{item.shownum?item.shownum:cfg.cfg.defaultAvatar }}'></image>
+        </view>
+        <view>
+          <view class='nickName'>{{item.mdanswer?item.mdanswer:"无名氏"}}
+            <view wx:if="{{index==0}}" class='rank1'>状元</view>
+            <view wx:if="{{index==1}}" class='rank2'>榜眼</view>
+            <view wx:if="{{index==2}}" class='rank3'>探花</view>
+            <view wx:if="{{index==3}}" class='rank4'>进士</view>
+            <view wx:if="{{index==4}}" class='rank5'>举人</view>
+          </view>
+          <view class='downTxt'>
+            <view class='t1'>总分：{{item.totalscore }}</view>
+            <view class='t2'>答题正确率:{{item.useranswer}}</view>
+          </view>
+        </view>
+      </view>      
+    </view> 
+  </view>
+  
+  
+  <view class='leftC' hidden="{{!showright}}">
+    <view class='headerC'>
+      <view class='header' bindtap='goleft'>
+        <view class='header-txt'>答题正确率排行榜</view>
+      </view>
+      <view class='header'>
+        <view class='header-txt'>答题勤奋排行榜</view>
+        <view class='activebar'></view>
+      </view>
+    </view> 
+    <view class='list1-C'>
+      <view class='list1' wx:for="{{totalSArr}}" 
+          wx:for-index="index" wx:for-item="item">
+        <view class='avatarC'>
+          <image class='avatar' src='{{item.shownum?item.shownum:cfg.cfg.defaultAvatar }}'></image>
+        </view>
+        <view>
+          <view class='nickName'>{{item.mdanswer?item.mdanswer:"无名氏"}}</view>
+          <view class='downTxt'>
+            <view class='t1'>总分：{{item.totalscore }}</view>
+            <view class='t2'>答题总数:{{item.time}}</view>
+          </view>
+        </view>
+      </view> 
+    </view> 
+  </view>
+</view>

@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/invite/invite",
+    "pages/wait/wait",
+    "pages/wait-passive/wait-passive",
+    "pages/PK/PK",
+    "pages/detailResult/detailResult",
+    "pages/ranks/ranks",
+    "pages/myscore/myscore",
+    "pages/demo/demo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#5A83FF",
+    "navigationBarTitleText": "刷题吧！骚年",
+    "navigationBarTextStyle": "write",
+    "backgroundColor": "#5A83FF"
+  }
+}

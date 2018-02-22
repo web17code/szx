@@ -1,0 +1,70 @@
+<!--index.wxml-->
+<view class='bg pt40'>
+  <image class='avatar' src="{{userInfo==null?(cfg.cfg.defaultAvatar):userInfo.avatarUrl}}"></image>
+  <view class='grade'><text>总成绩：{{totalscore==null?0:totalscore==""?0:userInfo.totalscore}}{{totalscore}}分</text></view>
+  <!-- <view class='progess'>
+    <text class='progessTxt'>Lv.1</text>
+    <view class='level-out'><view class='level-in'></view></view>
+  </view> -->
+  <image src='../../images/index-1pic.png' class='img-1'></image>
+  <view class="index-panel">
+    <image src='../../images/index-2pic.jpg' class='img-2' mode='aspectFit'></image>
+    <image src='../../images/index-3pic.png' class='img-3' mode='aspectFit' bindtap='chooseType'></image>
+    <view class='otherEntryC'>
+      <view class='otherEntry'>
+        <view class='entry entry1' bindtap='gomyscore'>
+          <image src='../../images/index-4pic.jpg' class='img-4'></image>
+          <text>我的成绩</text>
+        </view>
+        <view class='entry entry2' bindtap='goError'>
+          <image src='../../images/index-5pic.jpg' class='img-5'></image>
+          <text>错题集</text>
+        </view>
+        <view class='entry entry3' bindtap='goRankPage'>
+          <image src='../../images/index-6pic.jpg' class='img-6'></image>
+          <text>排行榜</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!--  遮罩层  wx:if='{{ishowPopUp}}'-->
+<view class='pop-up-C' hidden='{{!ishowPopUp}}'>
+  <view class='pop-up'> 
+    <view class='chooseList'>
+      <image class='img-title' src='../../images/index-choose-title.png'></image>
+      <view class='list-item' data-num='1' bindtap='choose'>
+        <image class='check-pic' src='{{isActive=="1"?"../../images/index-checked.png":"../../images/index-nochecked.png"}}'></image>
+        <view class='choose-1Txt {{isActive=="1"?"isActive":""}}'>一年级</view>
+        <view class='choose-2Txt {{isActive=="1"?"isActive":""}}'>每次答题最高可得200分</view>
+      </view>
+      <view class='list-item' data-num='2' bindtap='choose'>
+        <image class='check-pic' src='{{isActive=="2"?"../../images/index-checked.png":"../../images/index-nochecked.png"}}'></image>
+        <view class='choose-1Txt {{isActive=="2"?"isActive":""}}'>二年级</view>
+        <view class='choose-2Txt {{isActive=="2"?"isActive":""}}'>每次答题最高可得200分</view>
+      </view>
+      <view class='list-item' data-num='3' bindtap='choose'>
+        <image class='check-pic' src='{{isActive=="3"?"../../images/index-checked.png":"../../images/index-nochecked.png"}}'></image>
+        <view class='choose-1Txt {{isActive=="3"?"isActive":""}}'>三年级</view>
+        <view class='choose-2Txt {{isActive=="3"?"isActive":""}}'>每次答题最高可得200分</view>
+      </view>
+      <view class='list-item' data-num='4' bindtap='choose'>
+        <image class='check-pic' src='{{isActive=="4"?"../../images/index-checked.png":"../../images/index-nochecked.png"}}'></image>
+        <view class='choose-1Txt {{isActive=="4"?"isActive":""}}'>四年级</view>
+        <view class='choose-2Txt {{isActive=="4"?"isActive":""}}'>每次答题最高可得200分</view>
+      </view>
+      <view class='list-item' data-num='5' bindtap='choose'>
+        <image class='check-pic' src='{{isActive=="5"?"../../images/index-checked.png":"../../images/index-nochecked.png"}}'></image>
+        <view class='choose-1Txt {{isActive=="5"?"isActive":""}}'>五年级</view>
+        <view class='choose-2Txt {{isActive=="5"?"isActive":""}}'>每次答题最高可得200分</view>
+      </view>
+      <view class='list-item' data-num='6' bindtap='choose'>
+        <image class='check-pic' src='{{isActive=="6"?"../../images/index-checked.png":"../../images/index-nochecked.png"}}'></image>
+        <view class='choose-1Txt {{isActive=="6"?"isActive":""}}'>六年级</view>
+        <view class='choose-2Txt {{isActive=="6"?"isActive":""}}'>每次答题最高可得200分</view>
+      </view>
+      <view class='btn' bindtap='goInvite'>确定</view>
+    </view>
+    <image class='close-img' src='../../images/index-close.png' bindtap='popDown'></image>
+  </view>
+</view>

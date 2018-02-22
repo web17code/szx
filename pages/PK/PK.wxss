@@ -1,0 +1,223 @@
+/* pages/PK/PK.wxss */
+.bg{
+  background: #5A83FF url(https://mapp.zhunedu.com/images/bg-otherPage.png) no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+  padding-top: 2rpx
+}
+.bg.pt80{
+  padding-top: 80rpx;
+}
+.readyed{
+  display: none;
+}
+/*noready*/
+.start-1C{
+  padding-top: 122rpx;
+}
+.avatar{
+  background:#ddd;
+  border-radius:50%;
+  width:110rpx;
+  height:110rpx;
+  display:block;
+  border:10rpx solid #fff;
+}
+.start-Txt{
+  font-size: 30rpx;
+  font-weight: bold;
+  color:#fff;
+}
+.start-1pic{
+  width: 460rpx;
+  height: 280rpx;
+  display: block;
+  margin: -30rpx auto 0;
+}
+/*  left  */
+.start-1C .start-v-1{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  position: relative;
+  padding:10rpx 10rpx 10rpx 0;
+  background: #88a7ff;
+  width: 300rpx;
+  height: 130rpx;
+  margin-left: -30rpx;
+  border-radius: 0 75rpx 75rpx 0;
+}
+.start-1C .start-v-2{
+  position: relative;
+  background: #88a7ff;
+  width: 250rpx;
+  height: 100rpx;
+  margin-left: -30rpx;
+  border-radius: 0 50rpx 50rpx 0;
+}
+.start-1C .start-v-2 .start-Txt{
+  width: 440rpx;
+  text-align: center;
+  position: absolute;
+  z-index: 11;
+  top:10rpx;
+  left:34rpx;
+}
+/* right */
+.start-2C{
+  position: absolute;
+  right: 0rpx;
+  top:676rpx;
+}
+.start-2C .start-v-1{
+  position: absolute;
+  right:0rpx;
+  padding:10rpx 0rpx 10rpx 10rpx;
+  background: #88a7ff;
+  width: 290rpx;
+  height: 130rpx;
+  border-radius: 75rpx 0 0 75rpx;
+}
+.start-2C .start-v-2{
+  position: absolute;
+  right:0rpx;
+  background: #88a7ff;
+  width: 250rpx;
+  height: 100rpx;
+  border-radius: 50rpx 0 0 50rpx;
+  top:140rpx;
+}
+.start-2C .start-v-2 .start-Txt{
+  width: 440rpx;
+  text-align: center;
+  position: absolute;
+  z-index: 11;
+  top:10rpx;
+  right:30rpx;
+}
+/*readyed*/
+.pk-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  margin:10rpx auto;
+}
+.pk-row .pk-avatar{
+  width: 150rpx;
+  margin:0 auto 16rpx; 
+}
+.pk-row .pk-name{
+  color:#fff;
+  font-size:26rpx;
+  text-align: center;
+}
+.pk-row .pk-avatar image{
+  background: #ddd;
+  border-radius: 50%;
+  width: 110rpx;
+  height: 110rpx;
+  display: block;
+  border:10rpx solid #fff;
+  margin-bottom:16rpx; 
+}
+.canvas-C{
+  width:181rpx;
+  height:203rpx;
+  display: block;
+  margin:0rpx auto;
+}
+.pk-question{
+  width:660rpx;
+  height: 700rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 66rpx auto 0;
+}
+.req{
+  padding-top:40rpx;
+  margin-bottom: 72rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  width: 610rpx;
+  color:#373737;
+}
+.pk-option{
+  width:554rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border: 1px solid #BFBFBF;
+  border-radius: 10rpx;
+  text-align: center;
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+  font-size: 30rpx;
+  font-weight: bold;
+  color:#88A7FF;
+  margin-bottom:20rpx;
+}
+.pk-option image{
+  width:64rpx;
+  height:64rpx;
+  position: absolute;
+  z-index: 11;
+  top:13rpx;
+}
+.pk-option .img-left{
+  left:10rpx;
+}
+.pk-option .img-right{
+  right:10rpx;
+}
+.pk-option.rightbg{
+  border:1px solid #A3D238;
+  background: #A3D238;
+  color:#fff;
+}
+.pk-option.norightbg{
+  border:1px solid #F74F4F;
+  background: #F74F4F;
+  color:#fff;
+}
+.pk-option.choose-right{
+  
+  background:#A3D238;
+  color:#fff;
+}
+.pk-option.choose-error{
+  
+  background:#F74F4F;
+  color:#fff;
+}
+.pop-up-C{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(51, 51, 51, 0.75);
+  position:fixed;
+  left: 0px;
+  top: -200rpx;
+  right: 0px;
+  bottom: 0px;
+  z-index:900;
+}
+.successPic{
+  width: 750rpx;
+  height:808rpx;
+}
+.failPic{
+  width:564rpx;
+  height: 570rpx;
+}
+.timuPic{
+  width: 750rpx;
+}

@@ -1,0 +1,12 @@
+/* pages/demo/demo.wxss */
+.btn{
+  width: 700rpx;
+  color:#fff;
+  background-color:burlywood;
+  line-height: 70rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  display: block;
+  margin : 0 auto;
+  margin-top:20rpx;
+}

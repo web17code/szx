@@ -1,0 +1,189 @@
+.bg{
+  background: #5A83FF url(http://mapp.zhunedu.com/images/indexbg.png) no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+  display: block;
+  box-sizing: border-box;
+}
+.pt40{
+  padding-top: 36rpx;
+}
+.bg .avatar{
+  display: block;
+  margin:0 auto 36rpx;
+  flex-direction: row;
+  justify-content:right;
+  box-sizing: border-box;
+  border-radius: 50%;
+  width: 140rpx;
+  height: 140rpx;
+  border: 10rpx solid #FFF;
+}
+.bg .grade{
+  color:#FFF;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.progess{
+  margin-left: -34rpx;
+  margin-top: 20rpx;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.progess .progessTxt{
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #FFF;
+  margin-right: 16rpx;
+}
+.level-out{
+  width: 250rpx;
+  height: 16rpx; 
+  padding: 2rpx;
+  border-radius: 10rpx;
+  background: #FFF;
+}
+.level-in{
+  display: block;
+  box-sizing: border-box;
+  background: #88A7FF;
+  width: 50%;
+  height: 100%;
+  border-radius: 8rpx;
+}
+.img-1{
+  display: block;
+  margin: 30rpx auto 0;
+  width: 730rpx;
+  height: 36rpx;
+}
+.index-panel{
+  display: block;
+  box-sizing: border-box;
+  padding-top: 64rpx;
+  width: 700rpx;
+  background: #FFF;
+  margin: 0 auto;
+  border-radius:  0 0 10rpx 10rpx;
+  height: 816rpx;
+}
+.index-panel .img-2{
+  height: 302rpx;
+  margin: 0 auto 20rpx;
+  display: block;
+}
+.index-panel .img-3{
+  height: 76rpx;
+  margin: 0 auto 80rpx;
+  display: block;
+}
+.otherEntryC{
+  border-top: 1rpx solid #e2e2e2;
+  width: 658rpx;
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto;
+  padding-top: 78rpx;
+}
+.otherEntry{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.entry{
+  text-align: center;
+  font-size: 28rpx;
+}
+.entry1{
+  color:#70CDFD;
+}
+.entry2{
+  color:#ef8a7d;
+}
+.entry3{
+  color:#f1c03c;
+}
+.img-4,.img-5,.img-6{
+  width:120rpx;
+  height:120rpx;
+  display: block;
+  margin: 0 auto 18rpx;
+}
+.pop-up-C{
+  background: rgba(51, 51, 51, 0.75);
+  position:fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index:100;
+}
+.pop-up{
+  width: 600rpx;
+  left: 75rpx;
+  position: fixed;
+  top:186rpx;
+}
+.pop-up .img-title{
+  position: relative;
+  top: -54rpx;
+  width: 520rpx;
+  height: 116rpx;
+  display: block;
+  margin: 0 auto ;
+}
+.pop-up .chooseList{
+  width: 600rpx;
+  height: 730rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  margin-bottom: 62rpx;
+}
+.pop-up .list-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40rpx;
+  margin-bottom: 40rpx;
+  color:#a9adb7;
+  font-size: 28rpx;
+}
+.pop-up .list-item .check-pic{
+  margin-left:70rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.pop-up .list-item .choose-1Txt{
+  margin-left:24rpx;
+}
+.pop-up .list-item .choose-1Txt.isActive{
+  color:#88a7ff;
+  font-size: 36rpx;
+}
+.pop-up .list-item .choose-2Txt{
+  margin-left:28rpx;
+}
+.pop-up .list-item .choose-2Txt.isActive{
+  color:#88a7ff;
+}
+.pop-up .btn{
+  background: #88a7ff;
+  color: #fff;
+  font-size: 36rpx;
+  width: 530rpx;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  border:none;
+  line-height: 80rpx;
+  text-align:center;
+}
+.pop-up .close-img{
+  width: 80rpx;
+  height: 80rpx;
+  margin:0 auto;
+  display:block;
+}

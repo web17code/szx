@@ -1,0 +1,19 @@
+<view class="myscorebg">
+  <view class='avatarC'>
+    <image class="hat" src="../../images/hat1.png"></image>
+    <image class='avatar' src="{{scoreData.photo?scoreData.photo:cfg.cfg.defaultAvatar}}"></image>
+    <view class='nickNameTxt'>{{scoreData.username?scoreData.username:cfg.cfg.defaultName}}</view>
+    <view class='nickNameTxt'>总成绩：{{scoreData.totalscore}}分</view>
+  </view>
+  <view class='context'>
+    <view class='info'>
+      <view>总成绩：{{scoreData.totalscore}}</view>
+      <view>总场次：{{scoreData.totalshow}}</view>
+      <view>做题总量：{{scoreData.sumtimu}}</view>
+      <view>胜场：{{scoreData.totalwin}}</view>
+      <view>胜率：{{scoreData. showac}}</view>
+    </view>
+  </view>
+  <button class='shareBtn' open-type="share" wx:if="{{!isShare}}">分享给我的好友</button>
+  <button  class='shareBtn' bindtap='goIndex' wx:if="{{isShare}}">开始我的挑战</button>
+</view>

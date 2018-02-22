@@ -1,0 +1,28 @@
+<!--pages/invite.wxml-->
+<view class='bg-invite'>
+  <view class='invite-content'>
+    <view class='invite-title'>数学挑战赛</view>
+    <view class='invite-p1'>难度挑战：{{type}}</view>
+    <view class='invite-p2'>*每次答题可获得200分</view>
+  </view>
+  <image class='borderShade' src="../../images/invite-Shade.png"></image>
+  <view class='c-C'>
+    <view class='c-animation-C'>
+      <button open-type="share"  class='c-source'>
+      <!-- <view> -->
+        <view style='font-size:30rpx;'>邀请</view>
+        <view style='font-size:30rpx;'>好友</view>
+      <!-- </view> -->
+      </button>
+      <view class='c-1x'></view>
+      <view class='c-2x'></view>
+    </view>
+    <view class='c-animation-C'>
+      <view class='c-source' bindtap='goIndex'>
+        <view style='font-size:30rpx;'>更换</view>
+        <view style='font-size:30rpx;'>难度</view>
+      </view>
+      <view class='c-1x'></view>
+    </view>
+  </view>
+</view>
