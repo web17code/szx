@@ -94,10 +94,17 @@ Page({
     
   },
   goError:function(){
-    wx.showToast({
-      title: '错题集暂未开放',
-      icon:"none",
-      duration:1500
-    })
+    if (app.globalData.userID) {
+      wx.navigateTo({
+        url: '../errorList/errorList?oid=' + app.globalData.userID
+      })
+    } else {
+      wx.showToast({
+        title: '登录中，请重试',
+        icon: "none",
+        duration: 1500
+      })
+      app.getOid();
+    }
   }
 })

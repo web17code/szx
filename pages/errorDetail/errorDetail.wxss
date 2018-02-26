@@ -1,0 +1,67 @@
+/* pages/errorDetail/errorDetail.wxss */
+
+.errorItem {
+  border-radius: 10rpx;
+  background: #fff;
+  padding: 20rpx 20rpx 0 20rpx;
+  width: 700rpx;
+  display: block;
+  box-sizing: border-box;
+  margin: 20rpx auto;
+}
+
+.answers {
+  height: 94rpx;
+  border-top: 1rpx dashed #d9d9d9;
+  border-bottom: 1rpx dashed #d9d9d9;
+  line-height: 94rpx;
+  font-size: 26rpx;
+  color: #85878d;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.answers .errorAnswer {
+  text-align: center;
+  background: #ff5959;
+  height: 38rpx;
+  width: 38rpx;
+  color: #fff;
+  line-height: 38rpx;
+  border-radius: 50%;
+}
+
+.answers .rightAnswer {
+  text-align: center;
+  background: #5984ff;
+  width: 38rpx;
+  height: 38rpx;
+  color: #fff;
+  line-height: 38rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.ItemTxt {
+  position: relative;
+  font-size: 30rpx;
+  color: #333;
+  padding-bottom: 10rpx;
+}
+
+.optionTxt {
+  color: #85878d;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 10rpx;
+}
+
+.optionTxt view {
+  width: 50%;
+  line-height: 70rpx;
+  display: block;
+}
+

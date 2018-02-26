@@ -195,7 +195,7 @@ Page({
           //发消息
           var sendJson = {};
           sendJson.userid = getApp().globalData.userID;//用户的ID
-          sendJson.tid = that.data.nowTiData.viewcount;//题目ID
+          sendJson.tid = that.data.nowTiData.id;//题目ID
           sendJson.mdanswer = that.data.nowTiData.answer;//标准答案
           sendJson.useranswer = useranswer;//当前题目用户选的那个
           sendJson.score = that.data.nowscore;

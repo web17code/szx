@@ -1,0 +1,14 @@
+<!--pages/errorList/errorList.wxml-->
+<view class='errorListbg'> 
+  <view class='errorItem'  wx:for="{{errorList}}" wx:for-index="index" wx:for-item="item">
+    <view class='ItemTxt'>
+      <image class='dot' src='../../images/blue.png'></image>
+      {{item.content}}
+    </view>
+    <view class='optionTxt'>
+      <view wx:for="{{item.optiontype}}" wx:for-item="option" >{{option}}</view>
+    </view>
+    <view class='goAnalyze' data-id='{{item.id}}' bindtap='goAnalyze'>查看解析</view>
+  </view>
+</view>
+

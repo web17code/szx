@@ -1,0 +1,15 @@
+<!--pages/errorDetail/errorDetail.wxml-->
+<view class='errorItem'>
+    <view class='ItemTxt'>
+      {{timuData.content}}
+    </view>
+    <view class='optionTxt'>
+      <view wx:for="{{timuData.optiontype}}" wx:for-item="option">{{option}}</view>
+    </view>
+    <view class='answers'>
+      <text>正确答案：</text>
+      <text class='rightAnswer'>{{timuData.answer}}</text>
+      <text>错误答案：</text>
+      <text class='errorAnswer'>{{timuData.useranswer}}</text>
+    </view>
+  </view>

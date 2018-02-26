@@ -9,7 +9,9 @@
     "pages/detailResult/detailResult",
     "pages/ranks/ranks",
     "pages/myscore/myscore",
-    "pages/demo/demo"
+    "pages/demo/demo",
+    "pages/errorList/errorList",
+    "pages/errorDetail/errorDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -6,8 +6,8 @@
         <view class='activebar'></view>
       </view>
       <view class='header' bindtap='goright'>
-        <view>答题勤奋排行榜</view>
-        <view></view>
+        <view  class='header-txt'>答题勤奋排行榜</view>
+        <view  class='noactivebar'></view>
       </view>
     </view> 
     <view class='list1-C' >
@@ -40,6 +40,7 @@
     <view class='headerC'>
       <view class='header' bindtap='goleft'>
         <view class='header-txt'>答题正确率排行榜</view>
+        <view class='noactivebar'></view>
       </view>
       <view class='header'>
         <view class='header-txt'>答题勤奋排行榜</view>

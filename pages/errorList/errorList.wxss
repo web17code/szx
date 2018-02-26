@@ -1,0 +1,63 @@
+/* pages/errorList/errorList.wxss */
+
+.errorListbg {
+  background: #5a83ff url(https://mapp.zhunedu.com/images/indexbg.png) no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+  display: block;
+  box-sizing: border-box;
+  padding-top: 20rpx;
+  padding-bottom: 40rpx;
+}
+
+.errorItem {
+  border-radius: 10rpx;
+  background: #fff;
+  padding: 20rpx 20rpx 0 20rpx;
+  width: 700rpx;
+  display: block;
+  box-sizing: border-box;
+  margin: 20rpx auto;
+}
+
+.errorItem:first-of-type {
+  margin-top: 0;
+}
+
+.goAnalyze {
+  text-align: center;
+  color: #5984ff;
+  height: 70rpx;
+  border-top: 1rpx dashed #d9d9d9;
+  line-height: 70rpx;
+  font-size: 26rpx;
+}
+
+.ItemTxt {
+  position: relative;
+  font-size: 30rpx;
+  color: #333;
+  padding-left: 40rpx;
+}
+.optionTxt{
+  color:#85878D;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 40rpx;
+}
+.optionTxt view{
+  width: 50%;
+  line-height: 60rpx;
+  display: block;
+}
+.dot {
+  position: absolute;
+  width: 26rpx;
+  height: 26rpx;
+  border-radius: 50%;
+  background: #A6BDFF;
+  left:0;
+  top:6rpx;
+}
