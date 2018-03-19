@@ -76,10 +76,15 @@
   margin: 0 auto 20rpx;
   display: block;
 }
-.index-panel .img-3{
+#sendFormID{
+  border:1rpx solid #fff;
   height: 76rpx;
+  background: #fff;
   margin: 0 auto 80rpx;
   display: block;
+}
+.index-panel .img-3{
+  height: 76rpx;
 }
 .otherEntryC{
   border-top: 1rpx solid #e2e2e2;

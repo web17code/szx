@@ -1,15 +1,28 @@
 <!--pages/errorDetail/errorDetail.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
 <view class='errorItem'>
     <view class='ItemTxt'>
-      {{timuData.content}}
+      <rich-text  class='ItemTxt'  nodes="{{timuData.content}}"></rich-text>
     </view>
     <view class='optionTxt'>
-      <view wx:for="{{timuData.optiontype}}" wx:for-item="option">{{option}}</view>
+      <view wx:for="{{timuData.optiontype}}" wx:for-item="option">
+        <rich-text  nodes="{{option}}"></rich-text>
+      </view>
     </view>
     <view class='answers'>
       <text>正确答案：</text>
       <text class='rightAnswer'>{{timuData.answer}}</text>
       <text>错误答案：</text>
-      <text class='errorAnswer'>{{timuData.useranswer}}</text>
+      <text class='errorAnswer'>{{timuData.useranswer=="null"?"?":timuData.useranswer}}</text>
+    </view>
+    <view class='analyseContent'>
+      <view class='analyseHeader'>题目解析</view>
+      <rich-text  class='analyseTxt'  nodes="{{timuData.analyse}}"></rich-text>
+      <!-- <view class='analyseTxt'>
+        <template is="wxParse" data="{{wxParseData:analyse.nodes}}"/>
+      </view> -->
+      <!-- <view class='analyseTxt'>
+      
+      </view> -->
     </view>
   </view>

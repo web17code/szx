@@ -6,9 +6,9 @@
       <view>{{userInfo==null?cfg.cfg.defaultName:(userInfo.nickName==null?(cfg.cfg.defaultName):userInfo.nickName)}}</view>
     </view>
     <image class='vs-pic' src="../../images/VS_03.png"></image>
-    <view class='wait-1'>
-      <image class='wait-avatar' src="{{userData?(userData.photoA?userData.photoA:cfg.cfg.defaultAvatar):''}}"></image>
-      <view>{{userData?(userData.uidA?userData.uidA:cfg.cfg.defaultName):'等待对手加入...'}}
+    <view class='wait-1'><!-- :cfg.cfg.defaultAvatar):'' -->
+      <image class='wait-avatar' src="{{userData?(userData.oidA==userID?  (userData.photoB):(userData.photoA)):cfg.cfg.defaultAvatar}}"></image>
+      <view>{{userData?(userData.uidB?userData.uidB:cfg.cfg.defaultName):'等待对手加入...'}}
       </view>
     </view>
   </view>

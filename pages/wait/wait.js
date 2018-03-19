@@ -35,20 +35,9 @@ Page({
         })
       }
     }
-    /*暂时测试ws-start */
-    wx.connectSocket({
-      url: getApp().globalData.cfg.cfg.ws_ip + '/' + getApp().globalData.userID + '/invite',
-      data: {},
-      header: {
-        'content-type': 'application/json'
-      },
-      method: "POST"
-    })
-    wx.onSocketOpen(function (res) {
-      console.log('WebSocket连接已打开！')
-      console.log(res)
-    })
+    
     wx.onSocketMessage(function (res) {
+      console.log('wait页面')
       var userData = JSON.parse(res.data);
       console.log(userData)
       if (userData.code == "4002") {//准备就绪
@@ -58,25 +47,13 @@ Page({
           isReady: true
         })
       } else if (userData.code == "4006") {//开始对战
-        if (!that.data.userData.uidA){
-          that.data.userData.uidA = ""
-        }
-        if (!that.data.userData.uidB) {
-          that.data.userData.uidB = ""
-        }
-        if (!that.data.userData.photoA) {
-          that.data.userData.photoA = ""
-        }
-        if (!that.data.userData.photoB) {
-          that.data.userData.photoB = ""
-        }
+        
         wx.redirectTo({
-          url: '../PK/PK?type=' + that.data.type + '&inviteA=' + that.data.userData.oidA
-          + '&inviteB=' + that.data.userData.oidB
-          + '&uidA=' + that.data.userData.uidA
-          + '&uidB=' + that.data.userData.uidB
-          + '&photoA=' + that.data.userData.photoA
-          + '&photoB=' + that.data.userData.photoB
+          url: '../PK/PK'
+          + '?nameA=' + userData.userA.username
+          + '&nameB=' + userData.userB.username
+          + '&photoA=' + userData.userA.userphoto
+          + '&photoB=' + userData.userB.userphoto
         })
       } else {
         that.setData({
@@ -161,7 +138,7 @@ Page({
   sendStart: function () {
     if (this.data.isReady) {//俩人都准备好了
       wx.sendSocketMessage({
-        data: JSON.stringify({ "msgs": "start" })
+        data: JSON.stringify({ "msgs": "start", "type": this.data.type})
       })
     } else {
       wx.showToast({
@@ -174,7 +151,8 @@ Page({
   },
   goIndex_closeWS: function () {//关闭ws链接，跳转到首页
     wx.closeSocket()
-    wx.redirectTo({
+    getApp().globalData.roomId = null;
+    wx.reLaunch({
       url: '../index/index'
     })
   }

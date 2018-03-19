@@ -1,5 +1,5 @@
 /* pages/errorDetail/errorDetail.wxss */
-
+@import "../../wxParse/wxParse.wxss";
 .errorItem {
   border-radius: 10rpx;
   background: #fff;
@@ -65,3 +65,28 @@
   display: block;
 }
 
+.analyseContent {
+  margin-top:20rpx;
+  
+}
+.analyseHeader{
+  color: #5984FF;
+  padding-left: 20rpx;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  border-left: 8rpx solid #5984ff;
+}
+.analyseTxt{
+  margin-top:20rpx;
+  color: #666;
+  font-size: 26rpx;
+}
+.analyseTxt image{
+  width:80rpx;
+  display: block;
+
+}
+.analyseTxt img{
+  width:80rpx;
+  display: block;
+}

@@ -13,13 +13,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    //于此同时，把几年级放到app.global中一份
     switch (options.isActive){
-      case "1": this.setData({ type: "一年级" }); break;
-      case "2": this.setData({ type: "二年级" }); break;
-      case "3": this.setData({ type: "三年级" }); break;
-      case "4": this.setData({ type: "四年级" }); break;
-      case "5": this.setData({ type: "五年级" }); break;
-      case "6": this.setData({ type: "六年级" }); break;
+      case "1": this.setData({ type: "一年级", roomId: options.roomId }); getApp().globalData.type = "一年级"; break;
+      case "2": this.setData({ type: "二年级", roomId: options.roomId }); getApp().globalData.type = "二年级"; break;
+      case "3": this.setData({ type: "三年级", roomId: options.roomId }); getApp().globalData.type = "三年级"; break;
+      case "4": this.setData({ type: "四年级", roomId: options.roomId }); getApp().globalData.type = "四年级"; break;
+      case "5": this.setData({ type: "五年级", roomId: options.roomId }); getApp().globalData.type = "五年级"; break;
+      case "6": this.setData({ type: "六年级", roomId: options.roomId }); getApp().globalData.type = "六年级"; break;
     }
   },
 
@@ -74,7 +75,7 @@ Page({
       return {
         title: '骚年！来刷题吧',
         imageUrl: "../../images/sharePIC.jpg",
-        path: '/pages/wait-passive/wait-passive?type=' + that.data.type + '&oid=' + getApp().globalData.userID,
+        path: '/pages/wait-passive/wait-passive?type=' + that.data.type + '&oid=' + getApp().globalData.userID + '&roomId=' + that.data.roomId,
         success: function (res) {// 转发成功
           if(getApp().globalData.userID!=null){
             wx.showToast({

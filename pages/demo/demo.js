@@ -71,25 +71,18 @@ Page({
   onShareAppMessage: function () {
   
   },
-  wxbuildWS:function(){
-    wx.connectSocket({
-      url: getApp().globalData.cfg.cfg.ws_ip + '/ows8A0SP_g02ZifL2EKIH6u5fCcs'  + '/invite',
-      data: {},
-      header: {
-        'content-type': 'application/json'
-      },
-      method: "POST"
+  formSubmit: function (e) {
+    // 获取表单id
+    var formId = e.detail.formId;
+    // 非真机运行时 formId 应该为 the formId is a mock one
+    console.log(e)
+    console.log(formId);
+    this.setData({
+      formId: formId,
+      openId: getApp().globalData.userID
     })
   },
-  htmlbuildWS:function(){
-    this.data.logArr.push("8795")
-    this.setData({
-      logArr: this.data.logArr
-    })
-  },
-  clearLog:function(){
-    this.setData({
-      logArr:[]
-    })
+  formReset: function () {
+    console.log('form发生了reset事件')
   }
 })

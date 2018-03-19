@@ -6,7 +6,7 @@
         <image class='avatar' src='{{userNA.photoA?userNA.photoA:cfg.cfg.defaultAvatar}}'></image>
       </view>
       <view class='start-v-2'>
-        <view class='start-Txt'>{{userNA.uidA?userNA.uidA:cfg.cfg.defaultName}}</view>
+        <view class='start-Txt'>{{userNA.nameA?userNA.nameA:cfg.cfg.defaultName}}</view>
       </view>
     </view>
     <image class="start-1pic" src='../../images/animation-vs.png'></image>
@@ -15,7 +15,7 @@
         <image class='avatar' src='{{userNA.photoB?userNA.photoB:cfg.cfg.defaultAvatar}}'></image>
       </view>
       <view class='start-v-2'>
-        <view class='start-Txt'>{{userNA.uidB?userNA.uidB:cfg.cfg.defaultName}}</view>
+        <view class='start-Txt'>{{userNA.nameB?userNA.nameB:cfg.cfg.defaultName}}</view>
       </view>
     </view>
   </view>
@@ -24,28 +24,36 @@
     <view class='pk-row'>
       <view class='pk-avatar'>
         <image class='' src='{{userNA.photoA?userNA.photoA:cfg.cfg.defaultAvatar}}'></image>
-        <view class='pk-name'>{{userNA.uidA?userNA.uidA:cfg.cfg.defaultName}}</view>
+        <view class='pk-name'>{{userNA.nameA?userNA.nameA:cfg.cfg.defaultName}}</view>
       </view>
       <canvas class='canvas-C' canvas-id='canvas-C' wx:if="{{showStopWatch}}"></canvas>
       <view class='pk-avatar'>
         <image class='pk-avatar' src='{{userNA.photoB?userNA.photoB:cfg.cfg.defaultAvatar}}'></image>
-        <view class='pk-name'>{{userNA.uidB?userNA.uidB:cfg.cfg.defaultName}}</view>
+        <view class='pk-name'>{{userNA.nameB?userNA.nameB:cfg.cfg.defaultName}}</view>
       </view>
     </view>
     <view class='pk-question'>
-      <view class='req'>{{nowItem}}、{{nowTiData.content}}</view>
+      <view class='req'>
+        {{nowItem}}、<rich-text nodes="{{nowTiData.content}}"></rich-text>
+      </view>
       <block wx:for="{{nowTiData.optiontype}}"  wx:key="index" wx:for-index="index" wx:for-item="item">
         <view  class='pk-option {{(nowrightIndex+"")==(index+"")?"rightbg":""}} {{(nowChoose+"")==(index+"")?(nowChoose+""!=nowrightIndex+""?"norightbg":""):""}}' data-index='{{index}}' bindtap='chooseOption'>
           <image></image>
-          {{item}}
+          <rich-text nodes="{{item}}"></rich-text>
           <image></image>
         </view>
       </block>
     </view>
   </view>
   <!-- 对局结果  -->
-  <view class='pop-up-C' bindtap='goDetailResult' wx:if="{{showResult}}">
-    <image src='{{"../../images/success.png"}}' class='successPic' wx:if="{{winner=='all'||winner==myID}}"></image>
-    <image src='{{"../../images/fail.png"}}' class='failPic' wx:if="{{winner!='all'&&winner!=myID}}"></image>
-  </view>
+  <form report-submit="true" bindsubmit="goDetailResult" wx:if="{{showResult}}">
+    <button formType="submit" type="primary">
+  
+      <view class='pop-up-C' bindtap=''>
+        <image src='{{"../../images/success.png"}}' class='successPic' wx:if="{{winner=='all'||winner==myID}}"></image>
+        <image src='{{"../../images/fail.png"}}' class='failPic' wx:if="{{winner!='all'&&winner!=myID}}"></image>
+      </view>
+
+    </button>
+  </form>
 </view>

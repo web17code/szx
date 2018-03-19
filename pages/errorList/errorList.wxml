@@ -3,10 +3,12 @@
   <view class='errorItem'  wx:for="{{errorList}}" wx:for-index="index" wx:for-item="item">
     <view class='ItemTxt'>
       <image class='dot' src='../../images/blue.png'></image>
-      {{item.content}}
+      <rich-text  nodes="{{item.content}}"></rich-text>
     </view>
     <view class='optionTxt'>
-      <view wx:for="{{item.optiontype}}" wx:for-item="option" >{{option}}</view>
+      <view wx:for="{{item.optiontype}}" wx:for-item="option" >
+        <rich-text  nodes="{{option}}"></rich-text>
+      </view>
     </view>
     <view class='goAnalyze' data-id='{{item.id}}' bindtap='goAnalyze'>查看解析</view>
   </view>

@@ -63,7 +63,7 @@
   font-size: 24rpx;
 }
 .start-btn{
-  background:  url(http://118.25.46.132:8080/shuati/images/start-btn_03.png) center;
+  background:  url(http://mapp.zhunedu.com/images/start-btn_03.png) center;
   background-size: cover;
   /* border: 10rpx solid #acc2ff; */
   display: block;

@@ -21,22 +21,8 @@ Page({
     nowCostTime: null,//当前题目花费的时间
     nowChoose: null,//当前题目的选择项
     StopWatchCost: 0,//秒表花费的时间
-    type: "",//哪一年级的
-    nowTiData: {//测试
-      // "analyse": "【分析】根据倒数的定义可知倒数等于本身的数是±1．",
-      // "answer": "D",
-      // "catename": "选择题",
-      // "content": "倒数等于本身的 <image class='timuPic' mode='aspectFit' src='http://img.tiku.cn/tikuimg/q_500014/a/09/02/48/9af1b3e02f.png'></image>数是（）",
-      // "create_date": 1517310106000,
-      // "degreed": "中档题",
-      // "id": 17949,
-      // "label": "2011-2012学年上海市浦东新区第四教育署六年级（下）期中数学试卷",
-      // "methods": "【解答】解：因为只有（+1）×（+1）=1，（-1）×（-1）=1，所以倒数等于本身的数是±1．故选D．",
-      // "nj": "六年级",
-      // "optiontype": ["1", "0", "-1", "±1"],
-      // "status": 0,
-      // "viewcount": "1348954"
-    },
+    type: getApp().globalData.type,//哪一年级的
+    nowTiData: {},
     nowscore: 200,
     hasTiData: false,
     oidA: null,
@@ -47,40 +33,64 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(app.globalData)
-    console.log("我的ID" + this.data.myID)
+    // console.log(app.globalData)
+    // console.log("我的ID" + this.data.myID)
     console.log(options)
     var usersInfo = {
-      uidA: options.uidA,
-      uidB: options.uidB,
+      nameA: options.nameA,
+      nameB: options.nameB,
       photoA: options.photoA,
       photoB: options.photoB
     }
-    console.log("-+-+--+-+-+-+-+-+")
-    console.log(usersInfo)
+    //重连时操作
+    // if (options.reconnection =="reconnection"){
+    //   wx.
+    // }
+    // console.log("-+-+--+-+-+-+-+-+")
     this.setData({
       systemInfo: wx.getSystemInfoSync(),
       systemInfoWidth: wx.getSystemInfoSync().windowWidth,
       systemInfoHeight: wx.getSystemInfoSync().windowHeight,
-      type: options.type,
-      oidA: options.inviteA,
-      oidB: options.inviteB,
+      // type: options.type,
+      // oidA: options.inviteA,
+      // oidB: options.inviteB,
       userNA: usersInfo
     })
     var that = this;
     var thisCostTime = 0;
     //wx.sendSocketMessage({ data: "pk_" + encodeURI(encodeURI(that.data.type))})
-    console.log("PK开始")
-    wx.sendSocketMessage({ data: JSON.stringify({ "msgp": "pk_" + that.data.type }) })
+    console.log("PK开始 msgp ：pk_" + getApp().globalData.type)
+    wx.sendSocketMessage({ data: JSON.stringify({ "msgp": "pk_" + getApp().globalData.type }) })
     //监听服务器发送的消息
     wx.onSocketMessage(function (res) {
+      console.log('pk页面监听')
       console.log("服务器返回数据")
       console.log(res)
       var respData = JSON.parse(res.data);
       console.log("解析后")
       console.log(respData)
-      if (respData.code == "4008") {//开始的标志
 
+      //安全测试题目
+      try{
+        if (respData.code == "4008" || respData.code == "4009"){
+          JSON.parse(respData.data[0].optiontype)
+        }
+      } catch(e){
+        wx.sendSocketMessage({
+          data:JSON.stringify({qid: respData.qid, type: "refresh", nj: respData.data[0].nj })
+        })
+        return false;
+      }
+      
+      if (respData.code == "4008") {//开始的标志
+        if (respData.data.length==0){//返回首页，关闭长连接
+          wx.closeSocket({})
+          getApp().globalData.roomId = null;
+          wx.redirectTo({
+            url: '../index/index'
+          })
+          return false;
+        }
         //处理选项
         if (typeof (respData.data[0].optiontype) == "string" && respData.data[0].optiontype.length > 0) {
           respData.data[0].optiontype = JSON.parse(respData.data[0].optiontype)
@@ -110,6 +120,7 @@ Page({
         console.log("4009")
         console.log(respData)
         that.setData({
+          isReadyed: true,//显示答题画面
           hasTiData: true,
           StopWatchCost: 0,//重置秒表已运行时间
           nowTiData: respData.data[0],
@@ -124,9 +135,25 @@ Page({
           myID: app.globalData.userID,
           showResult: true,//弹出结果
           roomId: respData.showid,//设置场次
-          winner: respData.winer
+          winner: respData.winer,
+          oidA: respData.u1,
+          oidB: respData.u2
         })
         wx.closeSocket()
+        getApp().globalData.roomId = null;
+      }
+      if(respData.code == "6010"){
+        wx.closeSocket()
+        //清除房间号
+        getApp().globalData.roomId = null;
+        wx.showToast({
+          title: '暂无匹配题目',
+          icon: "none",
+          duration: 1500
+        })
+        wx.redirectTo({
+          url: '../index/index'
+        })
       }
     })
     //画秒表
@@ -208,13 +235,16 @@ Page({
             data: JSON.stringify(sendJson)
           })
           setTimeout(function () {
+            console.log("是否下一题的判断")
+            console.log(that.data.nowItem)
+            console.log(that.data.totalItems)
             if (parseInt(that.data.nowItem) <= that.data.totalItems) {
               wx.sendSocketMessage({
-                data: JSON.stringify({ "msgn": "next_" + that.data.type })
+                data: JSON.stringify({ "msgn": "next_" + getApp().globalData.type })
               })
             } else {
               wx.sendSocketMessage({
-                data: JSON.stringify({ "msgc": "end", "oidA": that.data.oidA, "oidB": that.data.oidB })
+                data: JSON.stringify({ "msgc": "end"})
               })
             }
 
@@ -330,26 +360,34 @@ Page({
     }
   },
   //跳转到结果详情页
-  goDetailResult: function (event) {
+  goDetailResult: function (e) {
+    var formId = e.detail.formId;
+    console.log(formId);
     var that = this;
-    console.log(event)
-    if (!that.data.userNA.uidA) {
-      that.data.userNA.uidA = ""
-    }
-    if (!that.data.userNA.uidB) {
-      that.data.userNA.uidB = ""
-    }
-    if (!that.data.userNA.photoA) {
-      that.data.userNA.photoA = ""
-    }
-    if (!that.data.userNA.photoB) {
-      that.data.userNA.photoB = ""
-    }
+    wx.request({
+      url: getApp().globalData.cfg.cfg.http_ip + '/msg/template/formId', //仅为示例，并非真实的接口地址
+      method: "POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值application/json+application/x-www-form-urlencoded
+      },
+      data: {
+        userId: getApp().globalData.userID,
+        formId: formId
+      },
+      success: (res) => {
+        console.log("...")
+        console.log(res)
+      }
+    })
     wx.redirectTo({
-      url: '../detailResult/detailResult?roomId=' + that.data.roomId 
+      url: '../detailResult/detailResult?roomId=' + that.data.roomId
       + '&oidA=' + that.data.oidA 
       + '&oidB=' + that.data.oidB
     })
+  },
+  //获取表单ID
+  formSubmit: function (e) {
+    // 获取表单id
+    
   }
-
 })

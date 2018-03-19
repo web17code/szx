@@ -1,7 +1,7 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -80,6 +80,12 @@
 					"name": "errorDetail",
 					"pathName": "pages/errorDetail/errorDetail",
 					"query": "oid=ows8A0ZgsxcxRT9Dglm2H79pMLWU&tid=20337"
+				},
+				{
+					"id": -1,
+					"name": "demo",
+					"pathName": "pages/demo/demo",
+					"query": ""
 				}
 			]
 		}

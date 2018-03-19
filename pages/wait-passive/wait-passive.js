@@ -17,15 +17,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     var that = this;
     this.setData({
       type: options.type,
-      inviteID: options.oid
+      inviteID: options.oid,
+      roomId: options.roomId
     })
+    getApp().globalData.type = options.type
+    //向app.globalData中设置数据
     //获取自己的头像名称
     if (app.globalData.userInfo) {
       this.setData({
-        userInfo: app.globalData.userInfo
+        userInfo: app.globalData.userInfo,
+        userID: getApp().globalData.userID,
       })
     } else {
       //app中没有则获取用户信息
@@ -52,34 +57,43 @@ Page({
     })
     wx.onSocketMessage(function (res) {
       var userData = JSON.parse(res.data);
-
+      console.log('wait-passive')
       console.log(userData)
       if (userData.code=="4002"){
         that.setData({
           userData: userData
         })
       } else if (userData.code == "4006"){//开始pk的信号
-        if (!that.data.userData.uidA) {
-          that.data.userData.uidA = ""
-        }
-        if (!that.data.userData.uidB) {
-          that.data.userData.uidB = ""
-        }
-        if (!that.data.userData.photoA) {
-          that.data.userData.photoA = ""
-        }
-        if (!that.data.userData.photoB) {
-          that.data.userData.photoB = ""
-        }
         wx.redirectTo({
-          url: '../PK/PK?type=&inviteA=' + that.data.userData.oidA 
-          + '&inviteB=' + that.data.userData.oidB
-          + '&uidA=' + that.data.userData.uidA
-          + '&uidB=' + that.data.userData.uidB
-          + '&photoA=' + that.data.userData.photoA
-          + '&photoB=' + that.data.userData.photoB
+          url: '../PK/PK'
+          + '?nameA=' + userData.userA.username
+          + '&nameB=' + userData.userB.username
+          + '&photoA=' + userData.userA.userphoto
+          + '&photoB=' + userData.userB.userphoto
         })
-      }else{
+      } else if (userData.code == "6001") {
+        wx.closeSocket({})
+        getApp().globalData.roomId = null;
+        wx.redirectTo({
+          url: '../index/index'
+        })
+        wx.showToast({
+          title: '对局已失效',
+          icon: "none",
+          duration: 1500
+        })
+      } else if (userData.code == "6003"){
+        wx.closeSocket({})
+        getApp().globalData.roomId = null;
+        wx.redirectTo({
+          url: '../index/index'
+        })
+        wx.showToast({
+          title: '房间已满',
+          icon: "none",
+          duration: 1500
+        })
+      } else{
         that.setData({
           userData: null,
         })
@@ -149,7 +163,7 @@ Page({
       return false;
     }
     wx.connectSocket({
-      url: getApp().globalData.cfg.cfg.ws_ip + '/' + getApp().globalData.userID + '/' + this.data.inviteID ,
+      url: getApp().globalData.cfg.cfg.ws_ip + '/' + getApp().globalData.userID + '/' + this.data.roomId ,
       data: {},
       header: {
         'content-type': 'application/json'
@@ -159,7 +173,8 @@ Page({
   },
   goIndex_closeWS: function () {//关闭ws链接，跳转到首页
     wx.closeSocket()
-    wx.redirectTo({
+    getApp().globalData.roomId = null;
+    wx.reLaunch({
       url: '../index/index'
     })
   }

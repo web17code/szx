@@ -1,15 +1,20 @@
 <!--index.wxml-->
+
 <view class='bg pt40'>
   <image class='avatar' src="{{userInfo==null?(cfg.cfg.defaultAvatar):userInfo.avatarUrl}}"></image>
   <view class='grade'><text>总成绩：{{totalscore==null?0:totalscore==""?0:userInfo.totalscore}}{{totalscore}}分</text></view>
-  <!-- <view class='progess'>
-    <text class='progessTxt'>Lv.1</text>
-    <view class='level-out'><view class='level-in'></view></view>
-  </view> -->
   <image src='../../images/index-1pic.png' class='img-1'></image>
   <view class="index-panel">
     <image src='../../images/index-2pic.jpg' class='img-2' mode='aspectFit'></image>
-    <image src='../../images/index-3pic.png' class='img-3' mode='aspectFit' bindtap='chooseType'></image>
+    
+    <form report-submit="true" bindsubmit="sendNewPerson" style='display:block;background:#fff!important;border:0;border-radius:0;margin:0 auto;'>
+    <!-- <button formType="submit" style='padding:0;border-radius:0;border:0;display:block;background:#fff;'>bindtap='chooseType' -->
+    <button formType="submit" id="sendFormID" plain="true">
+    <image src='../../images/index-3pic.png' class='img-3' mode='aspectFit' ></image>
+    </button>
+    <!-- </button> -->
+    </form>
+
     <view class='otherEntryC'>
       <view class='otherEntry'>
         <view class='entry entry1' bindtap='gomyscore'>

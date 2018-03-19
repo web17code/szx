@@ -132,7 +132,7 @@
 }
 .pk-question{
   width:660rpx;
-  height: 700rpx;
+  min-height: 700rpx;
   border-radius: 10rpx;
   background: #fff;
   display: flex;
@@ -151,7 +151,7 @@
 }
 .pk-option{
   width:554rpx;
-  height: 90rpx;
+  min-height: 90rpx;
   line-height: 90rpx;
   border: 1px solid #BFBFBF;
   border-radius: 10rpx;
