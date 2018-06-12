@@ -1,5 +1,4 @@
 <!--pages/errorDetail/errorDetail.wxml-->
-<import src="../../wxParse/wxParse.wxml" />
 <view class='errorItem'>
     <view class='ItemTxt'>
       <rich-text  class='ItemTxt'  nodes="{{timuData.content}}"></rich-text>

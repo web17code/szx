@@ -1,5 +1,4 @@
 /* pages/errorDetail/errorDetail.wxss */
-@import "../../wxParse/wxParse.wxss";
 .errorItem {
   border-radius: 10rpx;
   background: #fff;
